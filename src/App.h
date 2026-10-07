@@ -1,4 +1,9 @@
 #pragma once
+
+// Resolve o conflito do nome da tecla PI com a macro de matemática do Arduino
+#include <Arduino.h>
+#undef PI
+
 #include <M5Cardputer.h>
 #include "KeyboardADV.h"
 #include "MathEngine.h"
@@ -27,7 +32,7 @@ class ExatasApp {
   void card(int x,int y,int w,int h,const char* name,bool active){
     uint16_t c=active?TFT_WHITE:TFT_DARKGREY;
     M5Cardputer.Display.drawRoundRect(x,y,w,h,5,c);
-    if(active) M5Cardputer.Display.fillRoundRect(x+2,y+2,w-4,h-4,4,TFT_DARKCYAN);
+    if(active) M5Cardputer.Display.fillRoundRect(x+2,y+2,w-4,h-4,TFT_DARKCYAN);
     M5Cardputer.Display.setTextColor(TFT_WHITE,TFT_BLACK);
     M5Cardputer.Display.setTextSize(1);
     M5Cardputer.Display.setCursor(x+8,y+9);
