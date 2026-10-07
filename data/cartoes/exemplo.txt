@@ -1,0 +1,2 @@
+Pergunta | Resposta
+Qual a fórmula de velocidade média? | v = Δs / Δt
