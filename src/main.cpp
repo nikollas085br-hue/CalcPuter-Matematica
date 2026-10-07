@@ -1,4 +1,18 @@
+#include <Arduino.h>
+
+#ifdef PI
+#undef PI
+#endif
+
 #include "App.h"
-ExatasApp app;
-void setup(){app.begin();}
-void loop(){app.loop();}
+
+void setup() {
+    Serial.begin(115200);
+    delay(100);
+
+    App::begin();
+}
+
+void loop() {
+    App::update();
+}
