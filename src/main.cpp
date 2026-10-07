@@ -181,7 +181,7 @@ void loop(){
       if(k.del && input.length()) input.remove(input.length()-1);
       if(k.enter) processForm();
       if(!k.enter&&!k.esc){ const char* hint="coeficientes separados por virgula"; switch(form){case 0:hint="ax+b=0  ->  a,b";break;case 1:hint="ax²+bx+c=0  ->  a,b,c";break;case 2:hint="ax³+bx²+cx+d=0  ->  a,b,c,d";break;case 3:hint="grau n  ->  a_n,...,a_0";break;case 4:hint="A·B^x=C  ->  A,B,C";break;case 5:hint="A·log_B(x)=C  ->  A,B,C";break;case 6:hint="A·x^p=C  ->  A,p,C";break;case 7:hint="ax+by=c ; dx+ey=f  ->  a,b,c,d,e,f";break;} prompt("ENTRADA",hint); }
-    } else { if(k.esc){page=1;prompt("ENTRADA","digite coeficientes");} }
+    } else { if (M5Cardputer.Keyboard.isKeyPressed(27))} }
   }
   delay(10);
 }
