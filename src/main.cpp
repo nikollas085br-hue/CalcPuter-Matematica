@@ -6,13 +6,12 @@
 
 #include "App.h"
 
-void setup() {
-    Serial.begin(115200);
-    delay(100);
+ExatasApp app;
 
-    App::begin();
+void setup() {
+    app.begin();
 }
 
 void loop() {
-    App::update();
+    app.loop();
 }
